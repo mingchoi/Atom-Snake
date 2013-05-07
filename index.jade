@@ -1,0 +1,57 @@
+!!!5
+html
+  head
+    title Atom Snake
+    meta(content='text/html; charset=UTF-8', http-equiv='Content-Type')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+    script(src='http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js')
+    link(href='http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css', rel='stylesheet')
+    script(src='AtomSnake.js')
+    style
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      body {
+        font-size: 0;
+        line-height: 0;
+        background: #2BA;
+      }
+      #wrapper {
+        text-align: center;
+      }
+      #title {
+        font-size: 100px;
+        line-height: 100px;
+        color: #FFF;
+        text-shadow: 1px 1px 0 #F60, 2px 2px 0 #E60, 3px 3px 0 #D60, 4px 4px 0 #C60, 5px 5px 0 #B60;
+      }
+      #atom-Snake-Game {
+        display: inline-block;
+        padding: 20px;
+        background: #DDD;
+        border-radius: 25px;
+      }
+      .snake-Led {
+        display: inline-block;
+        background: #030;
+        width: 50px;
+        height: 50px;
+        content: "";
+        border-radius: 50px;
+      }
+      .snake-Led-On {
+        background: #0D0;
+      }
+  body
+    #wrapper
+      h1#title Atom Snake
+      #atom-Snake-Game
+      audio#crawl
+        source(src="crawl.wav", type="audio/wav")
+      audio#eat
+        source(src="eat.wav", type="audio/wav")
+      audio#hit
+        source(src="hit.wav", type="audio/wav")
+
