@@ -3,10 +3,10 @@
   <head>
     <title>Atom Snake</title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
-    <script src="AtomSnake.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"> 
+    <script src="AtomSnake.js"></script>
     <style>
       * {
         -webkit-box-sizing: border-box;
@@ -44,12 +44,86 @@
       .snake-Led-On {
         background: #0D0;
       }
+      .snake-button {
+        position: relative;
+        background: -moz-linear-gradient(top, #ffffff 0%,	#d1d1d1);
+        background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#d1d1d1));
+        border: 1px solid #b0aeae;
+        cursor: pointer;
+      }
+      .snake-button:active {
+        background: #BBB;
+      }
+      .sbTop, .sbBottom {
+        display: block;
+        width: 100px;
+        height: 50px;
+      }
+      .sbLeft, .sbRight {
+        display: inline-block;
+        width: 50px;
+        height: 110px;
+      }
+      .sbLeft:after {
+        position: absolute;
+        top: 35px;
+        left: 8px;
+        width: 0;
+        height: 0;
+        content: " ";
+        border-style: solid;
+        border-width: 15px 30px 15px 0;
+        border-color: transparent #333 transparent transparent;
+      }
+       .sbRight:after {
+        position: absolute;
+        top: 35px;
+        left: 12px;
+        width: 0;
+        height: 0;
+        content: " ";
+        border-style: solid;
+        border-width: 15px 0 15px 30px;
+        border-color: transparent transparent transparent #333;
+      }
+      .sbTop:after {
+        position: absolute;
+        top: 8px;
+        left: 35px;
+        width: 0;
+        height: 0;
+        content: " ";
+        border-style: solid;
+        border-width: 0 15px 30px 15px;
+        border-color: transparent transparent #333 transparent;
+      }
+       .sbBottom:after {
+        position: absolute;
+        top: 12px;
+        left: 35px;
+        width: 0;
+        height: 0;
+        content: " ";
+        border-style: solid;
+        border-width: 30px 15px 0 15px;
+        border-color: #333 transparent transparent transparent;
+      }
     </style>
   </head>
   <body>
     <div id="wrapper">
       <h1 id="title">Atom Snake</h1>
       <div id="atom-Snake-Game"></div>
+      <div style="height: 20px;"></div>
+      <div class="snake-button sbLeft"></div>
+      <div style="display: inline-block;width:10px"></div>
+      <div style="display: inline-block;width:100px">
+        <div class="snake-button sbTop"></div>
+        <div style="height: 10px"></div>
+        <div class="snake-button sbBottom"></div>
+      </div>
+      <div style="display: inline-block;width:10px"></div>
+      <div class="snake-button sbRight"></div>
       <audio id="crawl">
         <source src="crawl.wav" type="audio/wav">
       </audio>
