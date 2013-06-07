@@ -49,6 +49,7 @@ class AtomSnake
   
   constructor: (@width, @height, @wall) ->
     @screen = new Screen @width, @height
+    # key down event
     $(window).keyup (e) =>
       if e.keyCode is 38
         @direction = 3 if @direction isnt 1
@@ -58,8 +59,12 @@ class AtomSnake
         @direction = 2 if @direction isnt 0
       else if e.keyCode is 39
         @direction = 0 if @direction isnt 2
-      #else if e.keyCode is 13
-        #@startGame()
+    $('.sbTop').click => @direction = 3 if @direction isnt 1
+    $('.sbBottom').click => @direction = 1 if @direction isnt 3
+    $('.sbLeft').click => @direction = 2 if @direction isnt 0
+    $('.sbRight').click => @direction = 0 if @direction isnt 2
+
+    # start game
     @startGame()
 
   startGame: () ->
